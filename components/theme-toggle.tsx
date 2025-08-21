@@ -5,7 +5,11 @@ import { Moon, Sun } from "lucide-react";
 
 type Theme = "light" | "dark";
 
-export default function ThemeToggle() {
+interface ThemeToggleProps {
+  isMobile?: boolean;
+}
+
+export default function ThemeToggle({ isMobile = false }: ThemeToggleProps) {
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState<Theme>("light");
 
@@ -52,12 +56,14 @@ export default function ThemeToggle() {
       aria-label="Toggle dark mode"
       aria-pressed={isDark}
       onClick={toggleTheme}
-      className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-3 py-2 text-sm text-gray-700 shadow-sm backdrop-blur hover:bg-white dark:border-white/10 dark:bg-gray-900/70 dark:text-gray-100"
+      className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3 py-2 text-sm text-gray-800 shadow-md backdrop-blur hover:bg-white transition-colors dark:border-white/10 dark:bg-gray-900/80 dark:text-gray-100"
     >
       {isDark ? <Moon size={16} /> : <Sun size={16} />}
-      <span className="hidden sm:inline">{isDark ? "Dark" : "Light"}</span>
+      <span className="hidden sm:inline font-medium">{isDark ? "Dark" : "Light"}</span>
     </button>
   );
 }
+
+
 
 

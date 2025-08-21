@@ -17,10 +17,13 @@ export default function Header() {
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
-      {/* Theme toggle pinned to top-right */}
-      <div className="fixed top-2 right-2 sm:top-6 sm:right-6 z-[1000]">
-        <ThemeToggle />
+      
+      {/* Desktop: Theme toggle positioned at top-right */}
+      <div className="hidden sm:block fixed right-3 bottom-3 sm:top-6 sm:right-6 sm:bottom-auto z-[1000]">
+        <ThemeToggle isMobile={false} />
       </div>
+      
+      {/* Mobile: Theme toggle integrated into navbar */}
       <nav className="flex fixed top-[0.15rem] left-[15rem] sm:left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-600 dark:text-gray-300 sm:w-[initial] sm:flex-nowrap sm:gap-5">
           {links.map((link) => (
@@ -58,6 +61,14 @@ export default function Header() {
               </Link>
             </motion.li>
           ))}
+          {/* Mobile theme toggle - positioned at the end of nav items */}
+          <motion.li
+            className="h-3/4 flex items-center justify-center relative sm:hidden"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <ThemeToggle isMobile={true} />
+          </motion.li>
         </ul>
       </nav>
     </header>

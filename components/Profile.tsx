@@ -2,7 +2,8 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { FaGithub, FaTwitter, FaLinkedin, FaCode } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
 import { SiLeetcode, SiGeeksforgeeks, SiCodingninjas } from "react-icons/si"
 
 const profiles = [
@@ -10,7 +11,7 @@ const profiles = [
   { name: "LeetCode", icon: SiLeetcode, url: "https://leetcode.com/u/sahilshinde3377" },
   { name: "GeeksforGeeks", icon: SiGeeksforgeeks, url: "https://www.geeksforgeeks.org/user/sahilshiiiru" },
   
-  { name: "Twitter", icon: FaTwitter, url: "https://x.com/ShindeSahil15" },
+  { name: "X", icon: FaXTwitter, url: "https://x.com/ShindeSahil15" },
   { name: "LinkedIn", icon: FaLinkedin, url: "https://www.linkedin.com/in/sahil-shinde-a37090259" },
 ]
 

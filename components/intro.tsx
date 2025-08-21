@@ -21,10 +21,10 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-96 "
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-96 px-4 sm:px-0"
       id="home"
     >
-      <div className="flex items-center justify-center ">
+      <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -41,7 +41,7 @@ export default function Intro() {
               height="192"
               quality="95"
               priority={true}
-              className="h-24 w-24 object-cover shadow-xl rounded-full border-[0.35rem] border-white dark:border-gray-800"
+              className="h-24 w-24 sm:h-32 sm:w-32 object-cover shadow-xl rounded-full border-[0.35rem] border-white dark:border-gray-800"
             />
           </motion.div>
           <motion.span
@@ -53,29 +53,28 @@ export default function Intro() {
               delay: 0.2,
               duration: 0.7,
             }}
-            className="absolute bottom-0 right-0 text-4xl "
+            className="absolute bottom-0 right-0 text-4xl"
           >
             👋
           </motion.span>
         </div>
       </div>
       <motion.h1
-  className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-  initial={{ opacity: 0, y: 100 }}
-  animate={{ opacity: 1, y: 0 }}
->
-  <span className="font-bold">Hello, I&apos;m Sahil.</span> I&apos;m a{" "}
-  <span className="font-bold"><FlipWords className="!text-black dark:!text-white" duration={2000} words={words} /></span> {""}
-   I enjoy
-  building <span className="italic">websites</span>. My focus is{" "}
-  <span className="underline">Next.js</span>. FullStack developer skilled in Next.js, React, Tailwind CSS, TypeScript, ShadCN, MongoDB, PostgreSQL, Prisma and Firebase. Strong portfolio in these technologies.
-</motion.h1>
+        className="mb-10 mt-4 px-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium !leading-[1.5] max-w-full"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <span className="font-bold">Hello, I&apos;m Sahil.</span> I&apos;m a{" "}
+        <span className="font-bold"><FlipWords className="!text-black dark:!text-white text-lg sm:text-xl md:text-2xl lg:text-3xl" duration={2000} words={words} /></span> {""}
+        I enjoy building <span className="italic">websites</span>. My focus is{" "}
+        <span className="underline">Next.js</span>. FullStack developer skilled in Next.js, React, Tailwind CSS, TypeScript, ShadCN, MongoDB, PostgreSQL, Prisma and Firebase. Strong portfolio in these technologies.
+      </motion.h1>
 
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="flex flex-col sm:flex-row items-center justify-center gap-[1.3rem] px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-[1.3rem] px-2 text-base sm:text-lg font-medium flex-wrap"
       >
         <Link
           href="#contact"
@@ -90,12 +89,13 @@ export default function Intro() {
         </Link>
 
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:text-gray-950 hover:bg-gray-200 active:scale-105 transition cursor-pointer border border-black/10"
+          className="group relative overflow-hidden bg-white dark:bg-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10 dark:border-white/10 text-gray-800 dark:text-gray-100"
           href="/Shinde_Sahil CV.pdf"
           download
         >
-          Download CV{" "}
-          <HiDownload className="opacity-60 group-hover:translate-x-[0.5] transition" />
+          <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-gray-200/0 via-gray-200/40 to-gray-200/0 dark:from-white/0 dark:via-white/10 dark:to-white/0 opacity-60" />
+          <span className="relative font-medium">Download CV</span>
+          <HiDownload className="relative opacity-80" />
         </a>
 
         <a
